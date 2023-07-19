@@ -52,5 +52,6 @@ int main(int argc, char *argv[])
 		wait(&childPID);
 	}
 	free(inputLine);
+	(void)argc;
 	return (0);
 }
