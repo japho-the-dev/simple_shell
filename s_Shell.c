@@ -1,13 +1,12 @@
 #include "s_Shell.h"
-
 /**
  * main - Entry point for the program.
  * @argc: The number of command-line arguments.
  * @argv: An array of strings containing the command-line arguments.
+ * struct stat filestat: file status structure
  *
  * Return: Always 0.
  */
-
 int main(int argc, char *argv[])
 {
 	char *inputLine = NULL;      /* Input line entered by the user */
@@ -23,20 +22,16 @@ int main(int argc, char *argv[])
 		if (isatty(0))
 			printf("#cisfun ");
 		bytesRead = getline(&inputLine, &lineLength, stdin);
-
 		if (bytesRead == -1)
 			break;
 		/* Tokenize the input line into command arguments */
 		commandArgs[0] = strtok(inputLine, " \n");
-
 		for (argIndex = 1; commandArgs[argIndex - 1]; argIndex++)
 			commandArgs[argIndex] = strtok(NULL, " \n");
 		if (commandArgs[0])
-		{
-			/* Check if the command executable exists */
+		{/* Check if the command executable exists */
 			if (stat(commandArgs[0], &fileStat) == 0)
-			{
-				childPID = fork();
+			{childPID = fork();
 				if (childPID == -1)
 				{
 					perror("Error: ");
