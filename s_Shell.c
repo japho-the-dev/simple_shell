@@ -3,7 +3,7 @@
  * main - Entry point for the program.
  * @argc: The number of command-line arguments.
  * @argv: An array of strings containing the command-line arguments.
- * struct stat filestat: file status structure
+ * stat: file status structure
  *
  * Return: Always 0.
  */

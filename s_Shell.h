@@ -9,4 +9,5 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 
+extern char **environ;
 #endif
