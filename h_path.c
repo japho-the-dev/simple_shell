@@ -18,7 +18,7 @@ void checkpath(char **arguments, char **env, struct stat **st, char *cmd_line)
 		switch (pid)
 		{
 			case -1:
-				free(*st);
+				/* free(*st); */
 				exit(EXIT_FAILURE);
 			case 0:
 				if (execve(arguments[0], arguments, env) == -1)
@@ -33,8 +33,8 @@ void checkpath(char **arguments, char **env, struct stat **st, char *cmd_line)
 				if (status != 0)
 				{
 					errno = 2;
-					/* free(*st);
-					free(cmd_line); */
+					free(*st);
+					free(cmd_line);
 					exit(errno);
 				}
 		}
