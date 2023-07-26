@@ -5,7 +5,7 @@
  * @env: environment variables
  * @st: pointer to path info
  * @cmd_line: a pointer to line of args
- * Return: void
+ * Return: nothing
  */
 void checkpath(char **arguments, char **env, struct stat **st, char *cmd_line)
 {
