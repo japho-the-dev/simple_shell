@@ -37,5 +37,5 @@ void print_number(int n)
 	}
 
 	num = (n % 10) + '0';
-	write(STDERR_FILENO, &num, 1);
+	write(2, &num, 1);
 }

@@ -10,11 +10,11 @@
 int main(int argc, char *argv[], char **env)
 {
 	size_t x = 0;
-	char *s_line = NULL, *command;
+	char *s_line = NULL;
 
 	(void)argc;
 	(void)argv;
-	(void)command;
+
 	while (1)
 	{
 		display_prompt();
@@ -28,6 +28,7 @@ int main(int argc, char *argv[], char **env)
 		}
 
 		execute_command(env, s_line, " \n\t\v\b\r\f");
+		free(s_line);
 	}
 	return (0);
 }
