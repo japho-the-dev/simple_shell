@@ -33,8 +33,8 @@ void checkpath(char **arguments, char **env, struct stat **st, char *cmd_line)
 				if (status != 0)
 				{
 					errno = 2;
-					free(cmd_line);
 					free(*st);
+					free(cmd_line);
 					exit(errno);
 				}
 		}
