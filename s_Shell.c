@@ -20,7 +20,7 @@ int main(int argc, char *argv[], char **env)
 		display_prompt();
 
 		if (getline(&s_line, &x, stdin) == -1)
-			free(s_line);
+			/* free(s_line); */
 			exit(EXIT_SUCCESS);
 
 		if (_strcmp(s_line, "exit\n") == 0)
