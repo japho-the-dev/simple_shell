@@ -18,6 +18,7 @@ void custom_error(char *cmd);
 void execute_command(char **env, char *command_line, char *delimiter);
 char *_strcat(char *dest, char *src);
 char *path(char *cmd);
+void checkpath(char **arguments, char **env, struct stat **st, char *cmd_line);
 int _strcmp(char *s1, char *s2);
 
 #endif
