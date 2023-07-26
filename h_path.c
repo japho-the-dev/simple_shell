@@ -12,7 +12,7 @@ void checkpath(char **arguments, char **env, struct stat **st, char *cmd_line)
 	pid_t pid;
 	int status;
 
-	if (stat(arguments[0], st) == 0)
+	if (stat(arguments[0], *st) == 0)
 	{
 		pid = fork();
 		switch (pid)
@@ -33,18 +33,19 @@ void checkpath(char **arguments, char **env, struct stat **st, char *cmd_line)
 				if (status != 0)
 				{
 					errno = 2;
-					free(cmd_line;
+					free(cmd_line);
 					free(*st);
 					exit(errno);
 				}
 		}
-		else
+	}
+	else
+	{
+		custom_error(arguments[0]);
+		if (!isatty(STDIN_FILENO == 0))
 		{
-			custom_error(arguments[0]);
-			if (!isatty(STDIN_FILENO == 0))
-			{
-				exit(127);
-			}
+			exit(127);
 		}
 	}
 }
+
