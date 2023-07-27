@@ -11,3 +11,4 @@ Objectives
 🔥 🔥 🔥 The Gate of Shell project 🔥 🔥 🔥
 
 This repository contains solutions to the simple_shell project tasks.
+A simple shell that displays a prompt and waits for the user to type a command.
